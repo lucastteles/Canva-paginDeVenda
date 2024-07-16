@@ -1,0 +1,1986 @@
+body {
+    
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #000000;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif, 'Times New Roman', Times, serif;
+    overflow-x: hidden;
+    
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.background {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/baacapa.png); /* Insira o caminho para sua imagem de fundo */
+    opacity: 0.3; /* Defina a opacidade desejada */
+    z-index: -1; /* Certifique-se de que o pseudo-elemento esteja atrás do conteúdo */
+    background-size: cover;
+    background-position: center;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Garanta que o gradiente esteja atrás de tudo */
+    background: linear-gradient(to bottom, rgb(18, 18, 18), transparent), linear-gradient(269.2deg,  rgb(0, 0, 0) 13.54%,  rgb(0, 0, 0) 50.52%, #000 85.94%);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 10%; /******ESPAÇAMENTO ALTERADO************/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    z-index: 999999;
+    
+    
+}
+
+.sol {
+    width: 150px;
+    height: auto; 
+    object-fit: cover;  
+   
+    overflow-y: hidden;  
+}
+
+header .navegacao a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 2px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    transition-property:background;
+}
+
+header .navegacao .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff;
+    background: transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid #701818; 
+    text-transform: uppercase;
+
+}
+
+
+header .navegacao  .btn:hover{
+    background-color: #701818 ;
+}
+
+header .navegacao a:not(:last-child){
+    margin-right: 30px;
+}
+
+header .navegacao a:hover{
+    color: #fff;
+}
+
+label{
+    display: none;
+   
+}
+
+#check{
+    z-index: 3;
+    display: none;
+}
+
+/****Responsivo*****/
+@media(max-width:960px){
+    header .navegacao{
+        display: none;
+    }
+
+    header img{
+        margin-left: 25px;
+    }
+
+    label{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition-property: color;
+        margin-right: 40px;
+        margin-bottom: 30px;
+    }
+
+    label{
+        color: #fff;
+    }
+
+    label:hover{
+        color:#fff
+
+    }
+
+    label .close-btn{
+        display: none;
+    }
+
+    #check:checked ~ header .navegacao{
+        z-index: 2;
+        position: fixed;
+        background: rgba(24, 25, 26, 0.9); 
+      
+        top: 0;
+        left: 0;
+        bottom: 0;
+        left: 60%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #check:checked ~ header .navegacao a{
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50;
+        letter-spacing: 2px;
+
+    }
+
+    #check:checked ~ header label .menu-btn{
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+
+    label .menu-btn{
+        position: absolute;
+    }
+
+    header .logo{
+        position: absolute;
+        bottom: -6px;
+        
+    }
+
+    header .navegacao  .btn{
+        display: none;
+    }
+
+
+
+}
+
+
+
+
+/*Depois do nav*/
+.inicio{
+    padding: 12rem 5%;
+    overflow-y: hidden;
+}
+
+.inicio{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.inicio .content{
+    flex: 1 1 40rem;
+    padding: 6.5em;
+}
+
+
+.inicio .content .agilidade{
+    font-size: 2rem;
+    color: #b5b5b5;
+}
+
+.inicio .content .agilidade-dois{
+  font-size: 1.7rem;
+  color: #b5b5b5;
+  margin-top: 20px;
+}
+
+
+.inicio .content .agilidade-dois span{
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.inicio .content .btn{
+    margin-top: 3rem;
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    font-size: 1.7rem;
+    color: #000;
+    font-weight: bold;
+    background: #6bc8e2;
+    cursor: pointer;
+    text-decoration: none;
+    border: 2px solid #059ac3; 
+    border-radius: 2px;
+    text-transform: uppercase; 
+}
+
+.inicio .content .btn:hover {
+    background-color: #701818 ;
+}
+
+
+
+.inicio .content .titulo {
+    margin-bottom: 20px
+}
+
+.inicio .content .titulo{
+    font-size: 4rem;
+    color: #fff;
+}
+
+.inicio .image{
+    flex: 1 1 40rem;
+    margin-bottom: -155px;     
+}
+
+.inicio .image img{
+    width: 100%;
+    transform:scale(0.8);
+
+ 
+
+}
+
+
+@media(max-width:968px){
+    html{
+        font-size: 50%;
+    }
+
+    .inicio .content .titulo{
+        font-size: 3rem;
+    }
+
+    .inicio .image{
+        flex: 1 1 40rem;
+        margin-bottom: -105px;        
+    }
+
+    
+}
+
+
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+
+    .inicio .content .titulo{
+        font-size: 4rem;
+    }
+
+    .inicio .content .agilidade{
+      font-size: 1.7rem;
+  }
+
+  
+  .inicio .content .agilidade-dois{
+    font-size: 1.7rem;
+}
+
+    .inicio .image{
+        flex: 1 1 40rem;
+        margin-bottom: -150px;           
+    }
+
+    .inicio{
+        padding: 16rem 5%;
+    }
+} 
+
+
+
+/************************************************/
+
+ .section {
+   
+    padding: 50px 0;
+    background-color: #020202;
+  }
+
+  section h2{
+    padding: 1rem 14%;
+    font-size: 4rem;
+    color: #fff;
+  }
+
+  
+  section .para-voce{
+    padding: 1rem 14%;
+    font-size: 2.2rem;
+
+    background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+  }
+
+ 
+  .carousel-section {
+    /* padding: 0rem 15%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin-top: 40px;
+    
+  }
+  .item-section {
+    flex: 0 0 auto;
+    width: 23%;
+    height: 25vh;
+    margin-right: 20px;
+    scroll-snap-align: start;
+    background-color: #0d0d10;
+    padding: 2rem 2%;
+    border-radius: 5%;
+  }
+
+  .item-section i{
+    font-size: 60px;
+    margin-top: -55px;
+    background: linear-gradient(135deg, #004cb7, #4dbad6, #004cb7); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+  }
+
+
+
+
+  .item-section .text{
+    font-size: 1.5rem;
+    color:#b5b5b5;
+    margin-top: 30px;
+
+  }
+
+  .item-section img {
+    width: 10%;
+    border-radius: 50%;
+  }
+   .icon {
+    font-size: 400px;
+    margin-bottom: 10px;
+  } 
+  .name {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #b5b5b5;
+    
+  }
+
+
+
+
+
+
+  
+  @media (max-width: 968px) {
+
+    section .para-voce{
+      padding: 1rem 15%;
+      font-size: 2rem;
+    }
+   
+
+    section h2{ 
+        font-size: 3rem;
+        color: #fff;
+        padding: 0rem 15%;
+       
+      }
+
+
+
+    .carousel-section {
+      flex-wrap: wrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding: 1rem 10%;
+    }
+  
+    .item-section {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 20px;
+      padding: 5rem 5%;
+      height: auto;
+   
+    }
+
+    .item-section .text{
+        font-size: 1.7rem;
+    }
+    
+    .item-section img {
+        width: 15%;
+      }
+
+      .name {
+        font-size: 1.2rem;
+        justify-content: center;
+      }
+
+    
+
+
+  }
+  
+  @media (max-width: 450px) {
+    section h2 {
+      font-size: 3rem;
+    }
+  
+    .item-section {
+      width: 100%;
+      height: auto;
+      padding: 5rem 5%;
+    }
+
+    .item-section .text{
+        font-size: 1.7rem;
+    }
+
+  
+    .item-section img {
+      width: 15%;
+    }
+
+    .name {
+        font-size: 1.3rem;
+      }
+  }
+ 
+
+
+
+   /******************ANVISA*********************/
+
+   .anvisa{
+    padding: 12rem 5%;
+}
+
+.anvisa{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #020202;
+    overflow-y: hidden;
+}
+
+
+.anvisa {
+    /* text-align: center; */
+    padding: 50px 0;
+    background-color: #020202;
+  }
+
+  .anvisa .content-anvisa .canva{
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+
+  }
+
+
+
+  .anvisa .blush{
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(#ae3100 , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  
+  .anvisa .blush.um{
+    top: 5800px;
+    right: -500px;
+    animation: blushOpacidade3 10s linear infinite ;
+  }
+  
+
+  
+  
+   @keyframes blushOpacidade3{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(1.3);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  } 
+
+
+
+.anvisa .content-anvisa{
+    flex: 1 1 40rem;
+    padding: 6.5em;
+}
+
+
+.anvisa .content-anvisa h3{
+    margin: 4px 0 0 0;
+    padding: 0 0 0 0px; 
+}
+
+
+
+.anvisa .content-anvisa h3 img{
+    width: 100%;
+    max-width: 30px;
+   
+   
+}
+
+
+.anvisa .content-anvisa .agilidade-anvisa{
+    font-size: 1.7rem;
+    color: #b5b5b5;
+}
+
+
+
+
+
+.anvisa .content-anvisa .titulo-anvisa {
+    margin-bottom: 20px
+}
+
+.anvisa .content-anvisa .titulo-anvisa{
+    font-size: 4rem;
+    color: #fff;
+}
+
+.anvisa .image-anvisa{
+    flex: 1 1 40rem;
+    margin-bottom: -155px;     
+}
+
+.anvisa .image-anvisa img{
+    width: 100%;
+}
+
+
+@media(max-width:968px){
+    html{
+        font-size: 50%;
+    }
+
+    .anvisa .blush{
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(#ae3100 , transparent 50%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+      }
+      
+      
+      .anvisa .blush.um{
+        top: 9000px;
+        right: -250px;
+        animation: blushOpacidade3 10s linear infinite ;
+      }
+      
+    
+      
+      
+
+    .anvisa .content-anvisa .titulo-anvisa{
+        font-size: 4rem;
+    }
+
+    .anvisa .image-anvisa{
+        flex: 1 1 40rem;
+        margin-bottom: -105px;        
+    }
+
+
+    .anvisa .content-anvisa{
+      margin-top: 100px;
+  }
+
+    
+}
+
+
+@media(max-width:450px){
+    html{
+        font-size: 40%;
+    }
+
+    .anvisa .blush{
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(#ae3100 , transparent 50%);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 2;
+      }
+      
+      
+      .anvisa .blush.um{
+        top: 8200px;
+        right: -250px;
+        animation: blushOpacidade3 10s linear infinite ;
+      }
+      
+    
+      
+      
+       @keyframes blushOpacidade3{
+        0%{
+          opacity: 0.2;
+          transform:scale(0.2);
+        }
+      
+        50%{
+          opacity: 0.9;
+          transform:scale(1.3);
+        }
+        100%{
+          opacity: 0.2;
+          transform:scale(0.2);
+        }
+      } 
+
+    .anvisa .image-anvisa{
+        flex: 1 1 40rem;
+        margin-bottom: -150px;           
+    }
+
+    .anvisa{
+        padding: 16rem 5%;
+    }
+
+
+    .anvisa .content-anvisa{
+      margin-top: 150px;
+  }
+
+} 
+
+
+
+
+
+
+  /*************TESTE***********/
+
+  .depoimentos {
+    padding: 20px;
+    background-color: #000;
+    min-height: 85vh;
+    /* overflow-y: hidden; */
+    
+  }
+
+
+
+  
+  /* .depoimentos h2 {
+    margin-top: 0;
+    font-size: 4rem;
+    font-weight: bold;
+    padding: 12rem 5%;
+    
+  }
+   */
+
+  .teste-sub{
+    font-size: 2.2rem;
+    padding: 12rem 5%;
+    margin-bottom: -220px;
+    background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    /* position: relative;
+    z-index: 998; */
+    
+
+   }
+
+  .depoimentos h3 {
+    font-size: 4rem;
+    padding: 12rem 5%;
+    margin-bottom: -160px;
+    color: #fff;
+    /* position: relative;
+    z-index: 997; */
+   
+  }
+  
+
+
+  .carousel {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-scroll-snap-type: x mandatory;
+    padding: 0rem 5%;
+    /* position: relative;
+    z-index: 999; */
+  }
+  
+  .carousel .item {
+    flex-shrink: 0;
+    margin-right: 20px;
+    padding: 20px;
+    /* background: #0b1e434d; */
+    background: linear-gradient(269.2deg,#021b3a 13.54%,#031b39 50.52%,#0919394d 85.94%);
+
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: center;
+    -webkit-scroll-snap-align: center;
+    width: 40%;
+    /* z-index: 99999999;  */
+    
+  }
+  
+  .carousel .item .content {
+    display: flex;
+    align-items: center;
+  
+  }
+  
+  .carousel .item img {
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 10px; /* Adiciona espaço entre a imagem e o texto */
+    margin-bottom: 15px;
+    
+  }
+  
+  .carousel .item p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #ada9a9;
+  }
+  
+
+  .carousel .item p.autor {
+    font-size: 14px;
+    font-style: italic;
+    color: #ada9a9
+  }
+
+  .carousel .item p.autor span {
+    font-size: 14px;
+    font-style: italic;
+    color: #fff;
+   
+  }
+
+ 
+
+
+/******DEPOIMENTO******/
+
+
+
+  .carousel-container {
+    display: flex;
+    justify-content: right; /* Coloca os botões nos extremos */
+    align-items: center; /* Alinha verticalmente */
+    padding: 0rem 5%;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 999;
+    
+}
+
+.btn-carousel {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    z-index: 999;
+}
+
+/* Adicione estilos específicos para os botões prev e next, se necessário */
+.btn-prev {
+    margin-right: 10px; /* Espaçamento entre os botões */
+}
+
+.btn-next {
+    margin-left: 10px; /* Espaçamento entre os botões */
+}
+
+
+/***************BLUSH DEPOIMENTO************************/
+
+.depoimentos .blush{
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(#0062ae , transparent 50%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+
+
+
+.depoimentos .blush.dois{
+  bottom: 700px;
+  right: -450px;
+  animation: blushOpacidade4 10s linear infinite ;
+}
+
+@keyframes blushOpacidade4{
+  0%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+
+  50%{
+    opacity: 0.9;
+    transform:scale(0.9);
+  }
+  100%{
+    opacity: 0.2;
+    transform:scale(0.2);
+  }
+} 
+
+
+
+@media (max-width: 968px) {
+  .carousel .item {
+    width: 80%; /* Reduz ainda mais a largura do item do carrossel para telas muito pequenas */
+}
+
+.depoimentos  {
+  padding: 20px;
+  font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+  margin-top: -990px;
+  max-height: 190vh;
+}
+
+  .depoimentos h3  {
+    padding: 20px;
+    font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+    margin-bottom: -120px;
+    
+  }
+
+  .teste-sub{
+    margin-top: 1000px;
+    font-size: 2rem;
+   }
+
+   .depoimentos p{
+    margin-bottom: -100px;;
+   }
+
+   .carousel {
+    overflow-x: auto; /* ou overflow-x: scroll; */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/***********BLUSH RESPONSIVO***********/
+
+.depoimentos .blush{
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(#0062ae , transparent 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  
+  
+  
+  .depoimentos .blush.dois{
+    bottom: 1800px;
+    right: -240px;
+    animation: blushOpacidade4 10s linear infinite ;
+  }
+  
+  @keyframes blushOpacidade4{
+    0%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  
+    50%{
+      opacity: 0.9;
+      transform:scale(0.9);
+    }
+    100%{
+      opacity: 0.2;
+      transform:scale(0.2);
+    }
+  } 
+  
+  }
+  
+  @media (max-width: 450px) {
+    .carousel .item {
+        width: 80%; /* Reduz ainda mais a largura do item do carrossel para telas muito pequenas */
+    }
+  
+    .depoimentos  {
+      padding: 20px;
+      font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+      margin-top: -1099px;
+      max-height: 220vh;
+       /* overflow-y: hidden;  */
+      
+    }
+   
+    .depoimentos h3 {
+        padding: 6rem 5%; /* Reduz o preenchimento superior e inferior */
+        font-size: 2.5rem; /* Ajusta o tamanho da fonte */
+        margin-bottom: -120px; /* Ajusta o espaçamento inferior */
+    }
+  
+    .depoimentos .teste-sub{
+        font-size: 2rem; 
+  
+    }
+  
+     /* .teste-sub{
+      margin-top: 110px;
+     }  */
+   
+  
+     .carousel {
+      display: flex;
+      overflow-x: hidden;
+      scroll-snap-type: x mandatory;
+      -webkit-scroll-snap-type: x mandatory;
+      padding: 0rem 5%;
+      position: relative;
+      z-index: 999;
+    }
+  
+    .carousel {
+      overflow-x: auto; /* ou overflow-x: scroll; */
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  }
+
+
+
+
+
+  /**********************************SLIDER CANVA****************************************/
+  .slider{
+    position: relative;
+    width: 100%;
+    height: 370px;
+    overflow: hidden;
+   
+}
+
+
+.slide-conteudo{
+  padding: 4rem 5%  ;
+  text-align: center;
+
+}
+
+
+.slide-conteudo h2{
+      color: #fff;
+      justify-content: center;
+      text-align: center;
+      margin-bottom: 35px;
+}
+
+.slide-conteudo p{
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  background: linear-gradient(269.2deg,#032248 13.54%,#69e1ff 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+ 
+}
+
+
+
+.item-canva{
+    position: absolute;
+    width: 200px;
+    /* width: 20%; */
+    height: 320px;
+    text-align: justify;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    left: calc(50% - 110px);
+    top: 0;
+}
+
+
+.item-canva{
+  position: absolute;
+  width: 200px;
+  /* width: 20%; */
+  height: 320px;
+  text-align: justify;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+  top: 0;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  
+}
+
+.item-canva:active{
+  scale: 0.92;
+  position: relative;
+  z-index: 99999;
+}
+
+
+.item-canva img{
+  width: 100%;
+ 
+}
+
+#next, #prev{
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 4rem;
+    font-family: monospace;
+    font-weight: bold;
+    left: 400px;
+
+}
+#next{
+    left: unset;
+    right: 400px;
+    
+}
+
+
+@media(max-width: 968px) {
+  .slider {
+    height: 250px;
+  }
+
+  .slide-conteudo h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .slide-conteudo p {
+    font-size: 2rem;
+  }
+
+  .item-canva {
+    width: 150px;
+    height: 220px;
+    padding: 10px;
+    left: calc(50% - 80px);
+  }
+
+  #prev {
+    font-size: 4rem;
+    top: 35%;
+    left: 10px;
+  
+  }
+
+
+  #next{
+    font-size: 4rem;
+    top: 35%;
+    right: 10%;
+ 
+  }
+
+  
+}
+
+@media(max-width: 450px) {
+  .slider {
+    height: 200px;
+  }
+
+  .slide-conteudo h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+
+  .slide-conteudo p {
+    font-size: 2rem;
+  }
+
+  .item-canva {
+    width: 120px;
+    height: 180px;
+    padding: 5px;
+    left: calc(50% - 60px);
+  }
+
+  #prev {
+    font-size: 4rem;
+    top: 35%;
+    left: 15px;
+  }
+
+  #next {
+    font-size: 4rem;
+    top: 35%;
+    right: 10%;
+  }
+}
+
+
+/*********************FAZEMOS CANVA*************************************/
+
+.fazemos {
+
+  
+  align-items: center;
+  background-image: linear-gradient(
+    #020202ef,
+    #020202bc, /* cor preta com 50% de transparência */
+      #020202d8 /* cor preta com 50% de transparência */
+    ), url(../images/baa3.png); /* adicione sua imagem de fundo aqui */
+  min-height: 120vh;
+  background-size: cover;
+  background-position: center; 
+}
+
+
+
+.fazemos .extra{
+  padding: 6em 15%;
+  z-index: 1;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+
+}
+
+
+
+.conheca{
+
+ position: relative;
+    z-index: 1;
+}
+
+
+.section-conheca {
+    padding: 2rem 12%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    position: relative;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 9999999;
+  }
+
+
+
+
+
+  .section-conheca .conheca{
+    flex: 1 1 40rem;  /*******DIMINUIR O LAOD DIREITO DA SECTION    10rem********/
+    padding: 1.5em; /****************************************ATENÇÃAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO**********************************************************************/
+    position: relative;
+    z-index: -2;
+  }
+
+
+  .fazemos .titulo-conheca{
+    margin-top: -200px;
+    padding: 1em 15%;
+    font-size: 4.2rem;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+    z-index: 9999999;
+
+    
+  }
+
+  
+
+  .titulo-conheca span{
+    background: linear-gradient(269.2deg,#4dbad6 13.54%,#348cf4 50.52%,#7b48e8 85.94%);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  
+  
+
+
+
+
+  .section-conheca .Lading-pages{
+    /* flex: 1 1 40rem; */
+    padding: 2.5em;
+    order: 2;
+    background-color: transparent; /* Cor branca com 50% de transparência */
+    backdrop-filter: blur(10px);
+    border: 1px solid #4dbad6; 
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 1px 1px 1px #4dbad6; */
+
+    
+  }
+
+
+  .section-conheca .Web-site img, .Lading-pages img{
+    width: 10%;
+    border-radius: 50%;
+    
+  }
+
+
+  .titulo-lading{
+    font-size: 3rem;
+    color: #fff;
+    text-align: left;
+  }
+
+
+  .section-conheca .Lading-pages .sobre-lading{
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #959595;
+   
+   
+  }
+
+
+  .Lading-pages {
+    margin-bottom: 30px; /* Define a margem inferior */
+  }
+
+
+  .Web-site {
+    margin-bottom: 30px; /* Define a margem inferior */
+  }
+
+
+
+  /****************/
+  .section-conheca .Web-site{
+    /* flex: 1 1 40rem; */
+    padding: 1.8em;
+    order: 2;
+    background-color: transparent; /* Cor branca com 50% de transparência */
+    backdrop-filter: blur(10px);
+    width: 100%;
+    border: 1px solid #4dbad6; 
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 1px 1px 1px #4dbad6; */
+   
+  }
+
+
+  .titulo-web{
+    font-size: 3rem;
+    color: #fff;
+    text-align: left;
+  }
+
+
+  .section-conheca .Web-site .sobre-web{
+    font-size: 1.8rem;
+    font-weight: normal;
+    line-height: 1.3;
+    padding: 1rem 0;
+    color: #959595;
+  }
+
+
+  
+
+  /****************/
+
+
+
+
+
+
+  .section-conheca .conheca .sobre-nos span{
+    text-transform: Uppercase;
+  }
+
+  .fazemos .sobre-img{
+    flex: 1 1 40rem; 
+    order: 1;
+    padding: 22rem 5%;
+    transform: scale(1);
+    z-index: 999999;
+    
+    
+    /* transform: scale(1.3);     *//*******Aumentar imagem********/
+    /* margin-top: 190px; */
+  }
+
+  .fazemos .sobre-img img{
+    width: 100%;
+    /* height: 90vh; */
+    z-index: 1;
+    transform: scale(1.9);
+    z-index: 99999;
+    position: relative;
+    z-index: 1;
+    
+    
+  }
+
+
+  @media (max-width: 968px) {
+    .section-conheca {
+      padding: 2rem 5%;
+    }
+
+    .fazemos .extra{
+      padding: 8em 10%;
+      z-index: 1;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+    
+    }
+    
+  
+    .fazemos .titulo-conheca {
+      padding: 2em 10%;
+      font-size: 3rem;
+    }
+
+    .conheca .titulo-lading, .titulo-web{
+      font-size: 2rem;
+
+    }
+  
+    .section-conheca .Lading-pages, 
+    .section-conheca .Web-site {
+      flex: 1 1 100%;
+      padding: 1.5em 3%;
+    }
+  
+    .section-conheca .paraquem img {
+      width: 100%;
+      height: auto;
+      bottom: -60px;
+      left: 110px;
+      margin-top: 20px;
+      position: absolute;
+      transform: none;
+    }
+
+    .fazemos .sobre-img  {
+      overflow-y: hidden;
+    }
+  }
+  
+  @media (max-width: 450px) {
+
+
+    .fazemos .extra{
+      padding: 11em 10%;
+      z-index: 1;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+    
+    }
+    
+    .fazemos .titulo-conheca {
+        padding: 1.2em 10%;
+        font-size: 3rem;
+      }
+    
+      .section-conheca .paraquem img {
+        width: 100%;
+        height: auto;
+        bottom: -60px;
+        left: 110px;
+        margin-top: 20px;
+        position: absolute;
+        transform: none;
+      }
+
+      .fazemos .sobre-img img {
+        transform: scale(1.7);
+      }
+
+      .fazemos .sobre-img  {
+        overflow-y: hidden;
+      }
+    }
+  
+
+
+    /*********************VOCE-CANVA***********************/
+    
+  /*******************FEITO PRA VOCÊ********************/
+
+  .voce{
+    padding: 12rem 5%;
+    background-color: #0B0B0B;
+}
+
+.voce .content-voce p{
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+
+}
+
+.voce .content-voce .total-p{
+  font-size: 1.8rem;
+  margin-top: 40px;
+  background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+
+.voce{
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: 1.5em;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(
+      #020202f4,
+      #02020259,/* cor preta com 50% de transparência */
+      #020202f4/* cor preta com 50% de transparência */
+      ), url(../images/baa4.png);
+      background-position: center;
+      background-size: cover;
+}
+
+
+
+.voce .content-voce{
+    flex: 1 1 40rem;
+    padding: 6.5em;
+}
+
+
+.voce .content-voce h3{
+    margin: 4px 0 0 0;
+    padding: 0 0 0 0px; 
+}
+
+
+
+.voce .content-voce h3 img{
+    width: 100%;
+    max-width: 30px;
+    margin-right: 10px;
+    transform:scale(0.9);
+   
+   
+}
+
+
+.voce .content-voce .agilidade-voce{
+    font-size: 1.5rem;
+    color: #b5b5b5;
+}
+
+
+
+.voce .content-voce .titulo-voce {
+    margin-bottom: 20px
+}
+
+.voce .content-voce .titulo-voce{
+    font-size: 4rem;
+    color: #f3f3f3;
+}
+
+.voce .image-voce{
+    flex: 1 1 40rem;
+    /* margin-bottom: -155px;      */
+}
+
+.voce .image-voce img{
+    width: 80%;
+}
+
+
+@media(max-width:968px){
+   
+  .voce .content-voce .agilidade-voce{
+    font-size: 1.8rem;
+    color: #b5b5b5;
+}
+
+.voce .image-voce{
+  display: flex;
+  justify-content: center;
+
+
+  /* margin-bottom: -155px;      */
+}
+
+.voce .image-voce img{
+  width: 80%;
+}
+
+    
+}
+
+
+@media(max-width:450px){
+  .voce .content-voce .agilidade-voce{
+    font-size: 2rem;
+    color: #b5b5b5;
+
+  }
+}
+
+
+
+
+
+
+.card-oferta {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 6rem 5%;
+  text-align: center;
+  width: 80%;
+  height: auto;
+  border: solid 2px #4dbad6;
+}
+
+.title-oferta {
+  color: #c1c1c1;
+  font-size: 2rem;
+  margin-top: 0;
+   margin-bottom: 10px;
+}
+
+.price {
+  color: #c1c1c1;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.price span{
+  font-size: 4rem;
+  color:#fff;
+}
+
+
+.price-avista{
+  color: #c1c1c1;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.btn-oferta {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  font-size: 1.7rem;
+  color: #000;
+  font-weight: bold;
+  background: #6bc8e2;
+  cursor: pointer;
+  text-decoration: none;
+  border: 2px solid #059ac3; 
+  border-radius: 2px;
+  text-transform: uppercase; 
+  transition: background-color 0.3s;
+}
+
+.btn-oferta:hover {
+  background-color: #0056b3;
+}
+
+
+/**********************GARANTIA CANVA***************************/
+
+
+.garantia{
+  padding: 12rem 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      rgb(6, 6, 6),
+      #0b0b0b75, /* cor preta com 50% de transparência */
+      #0B0B0B /* cor preta com 50% de transparência */
+    ), url(../images/baa6.png); /* adicione sua imagem de fundo aqui */
+  min-height: 120vh;
+  background-size: cover;
+  background-position: center; 
+}
+
+.garantia{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B0B0B;
+  overflow-y: hidden;
+}
+
+.garantia .content-garantia{
+  flex: 1 1 40rem;
+  padding: 6.5em;
+}
+
+.garantia .content-garantia .risco{
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+
+}
+
+
+.garantia .content-garantia h3{
+  margin: 4px 0 0 0;
+  padding: 0 0 0 0px; 
+}
+
+
+
+.garantia .content-garantia h3 img{
+  width: 100%;
+  max-width: 30px;
+ 
+ 
+}
+
+
+.garantia .content-garantia .agilidade-garantia{
+  font-size: 1.7rem;
+  color: #b5b5b5;
+}
+
+
+
+
+
+.garantia .content-garantia .titulo-garantia {
+  margin-bottom: 20px
+}
+
+.garantia .content-garantia .titulo-garantia{
+  font-size: 4rem;
+  color: #fff;
+}
+
+.garantia .image-garantia{
+  flex: 1 1 40rem;
+  margin-bottom: -155px;     
+}
+
+.garantia .image-garantia img{
+  width: 90%;
+
+}
+
+
+@media(max-width:968px){
+  html{
+      font-size: 50%;
+  }
+
+
+  .garantia .content-garantia{
+    margin-top: 60px;
+}
+
+
+  .garantia .content-garantia .titulo-garantia{
+      font-size: 4rem;
+  }
+
+  
+
+  .garantia .image-garantia{
+      flex: 1 1 40rem;
+      margin-bottom: -105px;        
+  }
+
+
+  .garantia{
+    min-height: 100vh;
+
+   
+}
+
+  
+}
+
+
+@media(max-width:450px){
+  html{
+      font-size: 40%;
+  }
+
+  .garantia .image-garantia{
+      flex: 1 1 40rem;
+      margin-bottom: -150px;           
+  }
+
+  .garantia{
+      padding: 16rem 5%;
+  }
+} 
+
+
+
+
+/*********************PROFESSOR************************/
+.professor{
+  padding: 12rem 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      rgb(6, 6, 6),
+      #0b0b0b75, /* cor preta com 50% de transparência */
+      #0B0B0B /* cor preta com 50% de transparência */
+    ), url(../images/baa6.png); /* adicione sua imagem de fundo aqui */
+  min-height: 120vh;
+  background-size: cover;
+  background-position: center; 
+}
+
+.professor{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #0B0B0B;
+  overflow-y: hidden;
+}
+
+.professor .content-professor{
+  flex: 1 1 40rem;
+  padding: 6.5em;
+}
+
+.professor .content-professor .seu-professor{
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(269.2deg,#032248 13.54%,#032248 50.52%,#69e1ff 85.94%);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+
+
+
+.professor .content-professor h3{
+  margin: 4px 0 0 0;
+  padding: 0 0 0 0px; 
+}
+
+
+
+.professor .content-professor h3 img{
+  width: 100%;
+  max-width: 30px;
+ 
+ 
+}
+
+
+.professor .content-professor .agilidade-professor{
+  font-size: 1.7rem;
+  color: #b5b5b5;
+}
+
+
+
+
+
+.professor .content-professor .titulo-professor {
+  margin-bottom: 20px
+}
+
+.professor .content-professor .titulo-professor{
+  font-size: 4rem;
+  color: #fff;
+}
+
+.professor .image-professor{
+  flex: 1 1 40rem;
+  margin-bottom: -155px;     
+}
+
+.professor .image-professor img{
+  width: 90%;
+
+}
+
+
+@media(max-width:968px){
+  html{
+      font-size: 50%;
+  }
+
+  .professor .content-professor .titulo-professor{
+      font-size: 4rem;
+  }
+
+  .professor .image-professor{
+      flex: 1 1 40rem;
+      margin-bottom: -105px;        
+  }
+
+
+  .professor{
+    min-height: 100vh;
+
+   
+}
+
+  
+}
+
+
+@media(max-width:450px){
+  html{
+      font-size: 40%;
+  }
+
+  .professor .image-professor{
+      flex: 1 1 40rem;
+      margin-bottom: -150px;           
+  }
+
+  .professor{
+      padding: 16rem 5%;
+  }
+} 
+
